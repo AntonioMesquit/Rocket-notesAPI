@@ -71,6 +71,7 @@ async index(request, response) {
     .whereIn("name" , filterTags)
     .innerJoin("notes" , "notes.id" , "tags.note_id")
     .orderBy("notes.title")
+    console.log(notes.toString());
 
 
   }else{
