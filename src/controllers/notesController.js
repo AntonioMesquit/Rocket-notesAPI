@@ -71,13 +71,6 @@ async index(request, response) {
     .whereIn("name" , filterTags)
     .innerJoin("notes" , "notes.id" , "tags.note_id")
     .orderBy("notes.title")
-<<<<<<< HEAD
-    console.log(notes.toString());
-=======
-   
->>>>>>> 45bde1d122786d9a64b57ed9781df65e3f1eb4aa
-
-
   }else{
 
     notes = await knex("notes").where({ user_id }).whereLike("title", `%${title}%`).orderBy("title")

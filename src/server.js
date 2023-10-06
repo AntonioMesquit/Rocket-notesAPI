@@ -1,4 +1,5 @@
 require("express-async-errors")
+require("dotenv/config")
 const AppError =require("./utills/AppError")
 const express = require('express')
 const routes = require("./routes")
@@ -27,7 +28,7 @@ return response.status(500).json({
     message: "Internal server error"
 })
 })
-const PORT = 3333
+const PORT = process.env.SERVER_PORT || 3333
 app.listen(PORT, () => console.log(`ola, estamos rodando na porta ${PORT}`))
 
 
